@@ -76,6 +76,12 @@ $ pip3 show 套件名稱 # 顯示套件相關資訊
 
     ![Python Formatting](./docs/format-autopep8.png)
 
+  - 安裝 VS Code 到 Shell(command line)
+
+    VS Code > ctrl+shift+p (macos: cmd+shift+p) > 輸入「shell」，選擇如下圖安裝 code command 到 PATH裡，以後即可在專案資料夾下，輸「code . 」以 VS Code 開啟專案
+
+    ![Open VSCode in Shell](./docs/shell-open.png)
+
 ## Python 摘要
 
 ### Code Style
