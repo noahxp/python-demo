@@ -3,8 +3,9 @@
 ## 環境安裝
 
 - windows : <https://www.python.org/downloads/>
+  - 建議可以從 Microsoft Store 安裝，可自動設定環境變數及日後的自動版更
 - mac os :
-install HomeBrow : <https://brew.sh/index_zh-tw>
+  - 先安裝 HomeBrow : <https://brew.sh/index_zh-tw>
 
 ```bash
 # 透過 HomeBrew 安裝 python
@@ -14,7 +15,7 @@ $ brew install python3
 ### pip 指令
 
 - python 已帶 pip 指令
-- 如電腦同時安裝 python2/python3 ，要使用 python3 需，指令改用 `pip3`
+- 如電腦同時安裝 python2/python3 ，要使用 python3 時，指令改用 `pip3`
 - pip 常用指令
 
 ```bash
@@ -24,6 +25,16 @@ $ pip3 uninstall 套件名稱 # 移除套件
 $ pip3 install --upgrade 套件名稱  # 升級套件
 $ pip3 show 套件名稱 # 顯示套件相關資訊
 ```
+
+- requirements.txt
+
+  - pip 可用 requirements.txt 作為管理套件相依性，意即目前的應用程式所需安裝的套件
+
+  ```bash
+  # pip 用 requirements.txt 安裝套件
+  $ pip3 install -r requirements.txt
+  ```
+
 
 ## 開發工具(IDE)
 
@@ -41,7 +52,7 @@ $ pip3 show 套件名稱 # 顯示套件相關資訊
 
     ![pylance extension](./docs/pylance-extension.png)
 
-    Code Runner : 快速在 VS Code 裡執行 Python 程式
+    ~~Code Runner : 快速在 VS Code 裡執行 Python 程式~~。Python Plugin 已自帶快速執行方式，可不裝此 plugin
 
     ![Code Runner](./docs/code-runner-extension.png)
 
@@ -82,6 +93,17 @@ $ pip3 show 套件名稱 # 顯示套件相關資訊
 
     ![Open VSCode in Shell](./docs/shell-open.png)
 
+  - 使用 VS Code 開發多種程式語言，可能會安裝多種語言所需的 extensions ，為避免 VS Code 載入愈來愈慢，可透過 .vscode/extensions.json 管理目前專案所需的 extensions ，以 Python 為例內容如下。細節見[官方說明](https://code.visualstudio.com/docs/editor/extension-gallery#_workspace-recommended-extensions)
+
+  ```json
+  {
+    "recommendations": [
+      "ms-python.vscode-pylance",
+      "ms-python.python"
+    ]
+  }
+  ```
+
 ## Python 摘要
 
 ### Code Style
@@ -89,8 +111,7 @@ $ pip3 show 套件名稱 # 顯示套件相關資訊
 - [pep8](https://www.python.org/dev/peps/pep-0008/)
 - 4個空格當縮排
 - Class : UpperCamelCase
-- Function/Vaiables : lowercase_with_underscores
-
+- Function/Variables : lowercase_with_underscores
 
 ### 資料型別
 

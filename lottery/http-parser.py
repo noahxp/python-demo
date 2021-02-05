@@ -34,26 +34,28 @@ def parse_tw_lotto_html(data_Info, number_count):
     return data_Info_List, data_Info_Dict
 
 
-'''
 # 捉最後一個月的開獎號碼
 head_Html_lotto = 'http://www.taiwanlottery.com.tw/Lotto/Lotto649/history.aspx'
 res = requests.get(head_Html_lotto, timeout=30)
 soup = BeautifulSoup(res.text, 'lxml')
 header_Info = soup.find_all(id=search_winning_numbers)
-data_Info_List,data_Info_Dict = parse_tw_lotto_html(header_Info, 7)
+data_Info_List, data_Info_Dict = parse_tw_lotto_html(header_Info, 7)
 print(data_Info_Dict)
 file = open('./lottery/dist/latest-month.txt', 'w')
 file.write(str(data_Info_Dict))
 file.close()
 
-'''
 # 已捉下來的內容
-files = ['./lottery/source/202012.html', './lottery/source/202011.html']
+'''
+files = ['./lottery/source/202010.html', './lottery/source/202009.html',
+         './lottery/source/202008.html', './lottery/source/202007.html', './lottery/source/202006.html']
 for f in files:
     f_content = open(f, 'r')
     print(f)
     html = f_content.read()
+    f_content.close()
     soup = BeautifulSoup(html, 'lxml')
     header_Info = soup.find_all(id=search_winning_numbers)
     data_Info_List, data_Info_Dict = parse_tw_lotto_html(header_Info, 7)
     print(data_Info_Dict)
+'''
