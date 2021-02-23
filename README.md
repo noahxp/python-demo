@@ -104,6 +104,8 @@ $ pip3 show 套件名稱 # 顯示套件相關資訊
   }
   ```
 
+  - 各語言建議 extensions : https://github.com/noahxp/tools/tree/master/ide
+
 ## Python 摘要
 
 ### Code Style
@@ -147,6 +149,14 @@ str() | 數值型別轉換為文字型別
 - 「del」關鍵字，可刪除變數或集合裡的內容
 
 - 「type()」函式，可取得變數型別
+
+### 列出所有內建函式
+
+- 在 cli 互動模式執行
+
+```bash
+dir(__builtins__)
+```
 
 ### 範例
 
