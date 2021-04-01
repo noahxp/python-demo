@@ -40,15 +40,18 @@ def markov_model_calc(all):
     last = all[all.__len__()-1]
     for i in range(len(last)):
         idx = np.argsort(stat[last[i]])
-        # print(last[i], idx[49:50], percent[last[i], idx[49:50]])
+        print(last[i], idx[48:50], percent[last[i], idx[48:50]])
         markov_model_forcast.append([idx[49:50][0], percent[last[i], idx[49:50][0]]])
 
     markov_model_forcast.sort(key=lambda x: x[1], reverse=True)
     # print('markov_model排序後機率=', markov_model_forcast, '\n')
 
     markov_model_top = []
-    for i in range(5):  # 取5個號碼，
-        markov_model_top.append(markov_model_forcast[i][0])
+    for i in range(7):  # 取5個號碼，
+        if markov_model_forcast[i][0] not in markov_model_top:
+            markov_model_top.append(markov_model_forcast[i][0])
+            # if len(markov_model_top) == 5:
+            #     break
 
     return markov_model_top
 ##### 馬可夫矩陣-end #####
@@ -68,7 +71,6 @@ def mode_calc(all):
     # print('前三開出的獎號:', most_top)
 
     return most_top
-    # forcast.append(most_top[0])
 
 ##### 次數最多-end #####
 
