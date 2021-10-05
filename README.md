@@ -106,6 +106,26 @@ $ pip3 show 套件名稱 # 顯示套件相關資訊
 
   - 各語言建議 extensions : https://github.com/noahxp/tools/tree/master/ide
 
+  - VS Code 使用 Python Virtual Environment
+    - 在 Python 環境先安裝 virtualenv 套件
+
+      ```bash
+      #!/bin/bash
+      $ pip3 install virtualenv
+      ```
+
+    - 在專案資料夾，透過 CLI 建立 Virtual Environment
+
+      ```bash
+      #!/bin/bash
+      $ virtualenv .venv
+      ```
+
+    - 切換到 Python Virtual Environment 的 Python Interpreter (Runtime)
+
+      VS Code > ctrl+shift+p (macos: cmd+shift+p)，輸入「`Python: Select Interpreter`」，選擇有 .venv 的 python runtime
+
+
 ## Python 摘要
 
 ### Code Style
