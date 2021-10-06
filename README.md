@@ -7,10 +7,10 @@
 - mac os :
   - 先安裝 HomeBrow : <https://brew.sh/index_zh-tw>
 
-```bash
-# 透過 HomeBrew 安裝 python
-$ brew install python3
-```
+    ```bash
+    # 透過 HomeBrew 安裝 python
+    $ brew install python3
+    ```
 
 ### pip 指令
 
@@ -18,13 +18,13 @@ $ brew install python3
 - 如電腦同時安裝 python2/python3 ，要使用 python3 時，指令改用 `pip3`
 - pip 常用指令
 
-```bash
-# pip 常用指令
-$ pip3 install 套件名稱   # 安裝套件
-$ pip3 uninstall 套件名稱 # 移除套件
-$ pip3 install --upgrade 套件名稱  # 升級套件
-$ pip3 show 套件名稱 # 顯示套件相關資訊
-```
+  ```bash
+  # pip 常用指令
+  $ pip3 install 套件名稱   # 安裝套件
+  $ pip3 uninstall 套件名稱 # 移除套件
+  $ pip3 install --upgrade 套件名稱  # 升級套件
+  $ pip3 show 套件名稱 # 顯示套件相關資訊
+  ```
 
 - requirements.txt
 
@@ -33,6 +33,19 @@ $ pip3 show 套件名稱 # 顯示套件相關資訊
   ```bash
   # pip 用 requirements.txt 安裝套件
   $ pip3 install -r requirements.txt
+  ```
+
+- macOS 無法安裝 pandas 套件解決方法 : 自行編譯
+
+  ```bash
+  # 如有使用 virtual env ，請先切換到 virtual env 下
+  # 先安裝編譯必要套件
+  $ pip3 install numpy cython
+
+  # 自行編譯並安裝 pandas 套件
+  $ git clone git@github.com:pandas-dev/pandas.git
+  $ cd pandas
+  $ python3 setup.py install
   ```
 
 
@@ -95,14 +108,14 @@ $ pip3 show 套件名稱 # 顯示套件相關資訊
 
   - 使用 VS Code 開發多種程式語言，可能會安裝多種語言所需的 extensions ，為避免 VS Code 載入愈來愈慢，可透過 .vscode/extensions.json 管理目前專案所需的 extensions ，以 Python 為例內容如下。細節見[官方說明](https://code.visualstudio.com/docs/editor/extension-gallery#_workspace-recommended-extensions)
 
-  ```json
-  {
-    "recommendations": [
-      "ms-python.vscode-pylance",
-      "ms-python.python"
-    ]
-  }
-  ```
+    ```json
+    {
+      "recommendations": [
+        "ms-python.vscode-pylance",
+        "ms-python.python"
+      ]
+    }
+    ```
 
   - 各語言建議 extensions : https://github.com/noahxp/tools/tree/master/ide
 
@@ -125,6 +138,12 @@ $ pip3 show 套件名稱 # 顯示套件相關資訊
 
       VS Code > ctrl+shift+p (macos: cmd+shift+p)，輸入「`Python: Select Interpreter`」，選擇有 .venv 的 python runtime
 
+    - 不在 IDE 裡，也可以手動切換到 virtualenv
+
+      ```bash
+      #!/bin/bash
+      . .venv/bin/active
+      ```
 
 ## Python 摘要
 
