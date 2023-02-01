@@ -132,6 +132,8 @@
       ```bash
       #!/bin/bash
       $ virtualenv .venv
+      # 或直接用指定版本建立 virtual env, ex:
+      $ /xxxx/python3.11 -m venv .venv
       ```
 
     - 切換到 Python Virtual Environment 的 Python Interpreter (Runtime)
